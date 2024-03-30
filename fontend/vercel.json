@@ -1,0 +1,9 @@
+{
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "https://threads-server-sinha-niranjan.vercel.app"
+      }
+    ]
+  }
+  
