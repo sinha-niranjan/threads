@@ -49,7 +49,7 @@ const HomePage = () => {
             <Spinner size={"xl"} />
           </Flex>
         )}
-        {posts?.map((post) => (
+        {posts && posts?.map((post) => (
           <Post key={post._id} post={post} postedBy={post.postedBy} />
         ))}
       </Box>
