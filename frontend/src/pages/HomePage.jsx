@@ -20,7 +20,7 @@ const HomePage = () => {
 
         const data = await res.json();
 
-        if (typeof data === "arrya") setPosts(data);
+        if (data?.length > 0) setPosts(data);
         if (data.error) {
           showToast("Error", data.error, "error");
         }
