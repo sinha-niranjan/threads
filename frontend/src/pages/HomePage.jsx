@@ -1,13 +1,10 @@
-import { Box, Button, Flex, Spinner } from "@chakra-ui/react";
+import { Box, Flex, Spinner } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useRecoilState, useRecoilValue } from "recoil";
-import userAtom from "../atoms/userAtom";
-import useShowToast from "../hooks/useShowToast";
-import { BsTypeH1 } from "react-icons/bs";
-import Post from "../components/Post";
+import { useRecoilState } from "recoil";
 import postsAtom from "../atoms/postsAtom";
+import Post from "../components/Post";
 import SuggestedUsers from "../components/SuggestedUsers";
+import useShowToast from "../hooks/useShowToast";
 
 const HomePage = () => {
   const [posts, setPosts] = useRecoilState(postsAtom);
