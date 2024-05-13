@@ -37,7 +37,7 @@ const HomePage = () => {
   return (
     <Flex gap={10} alignItems={"flex-start"}>
       <Box flex={70}>
-        {!loading && posts.length === 0 && (
+        {!loading && posts?.length === 0 && (
           <h1>
             {" "}
             Follow some users to see the feed. or your followed users has not
@@ -49,7 +49,7 @@ const HomePage = () => {
             <Spinner size={"xl"} />
           </Flex>
         )}
-        {posts.map((post) => (
+        {posts?.map((post) => (
           <Post key={post._id} post={post} postedBy={post.postedBy} />
         ))}
       </Box>
