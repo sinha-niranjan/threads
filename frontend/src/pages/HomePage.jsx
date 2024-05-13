@@ -10,7 +10,6 @@ const HomePage = () => {
   const [posts, setPosts] = useRecoilState(postsAtom);
   const [loading, setLoading] = useState(true);
   const showToast = useShowToast();
- 
 
   useEffect(() => {
     const getFeedPosts = async () => {
@@ -21,7 +20,7 @@ const HomePage = () => {
 
         const data = await res.json();
 
-        setPosts(data);
+        if (typeof data === "arrya") setPosts(data);
         if (data.error) {
           showToast("Error", data.error, "error");
         }
@@ -49,9 +48,10 @@ const HomePage = () => {
             <Spinner size={"xl"} />
           </Flex>
         )}
-        {posts && posts?.map((post) => (
-          <Post key={post._id} post={post} postedBy={post.postedBy} />
-        ))}
+        {posts &&
+          posts?.map((post) => (
+            <Post key={post._id} post={post} postedBy={post.postedBy} />
+          ))}
       </Box>
       <Box flex={30} display={{ base: "none", md: "block" }}>
         <SuggestedUsers />
